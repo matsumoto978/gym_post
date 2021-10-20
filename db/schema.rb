@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_20_075314) do
+ActiveRecord::Schema.define(version: 2021_10_20_075758) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,16 @@ ActiveRecord::Schema.define(version: 2021_10_20_075314) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_gyms_on_user_id"
+  end
+
+  create_table "keeps", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "gym_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["gym_id"], name: "index_keeps_on_gym_id"
+    t.index ["user_id", "gym_id"], name: "index_keeps_on_user_id_and_gym_id", unique: true
+    t.index ["user_id"], name: "index_keeps_on_user_id"
   end
 
   create_table "likes", force: :cascade do |t|
@@ -49,6 +59,8 @@ ActiveRecord::Schema.define(version: 2021_10_20_075314) do
   end
 
   add_foreign_key "gyms", "users"
+  add_foreign_key "keeps", "gyms"
+  add_foreign_key "keeps", "users"
   add_foreign_key "likes", "gyms"
   add_foreign_key "likes", "users"
 end
