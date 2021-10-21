@@ -17,7 +17,7 @@
 // max-width
 
 .mw-md {
-  max-width: 576px;
+  max-width: 500px;
 }
 
 .mw-xl {
@@ -31,4 +31,10 @@
 
 .alert-alert {
   @extend .alert-danger;
+}
+
+// navbar
+.navbar-brand {
+  font-family: "Londrina Shadow";
+  font-size: 25px;
 }
