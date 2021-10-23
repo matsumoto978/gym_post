@@ -19,7 +19,10 @@ gem 'devise-i18n'
 
 # Bootstrap
 gem 'devise-bootstrap-views', '~> 1.0'
-# gem 'image_processing', '~> 1.2'
+
+# 画像編集・追加
+gem 'mini_magick'
+gem 'image_processing', '~> 1.2'
 
 gem 'bootsnap', '>= 1.4.4', require: false
 
