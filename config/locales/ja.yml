@@ -10,23 +10,16 @@ ja:
       comment:
         content: コメント
       gym:
-        name: 施設名
+        name: 施設
         address: 住所
-        latitude: 緯度
-        longitude: 経度
+        latitude: 経度
+        longitude: 緯度
       keep:
         user: ユーザー
         gym: 施設
       like:
         user: ユーザー
         gym: 施設
-  views:
-    pagination:
-      first: "&laquo; 最初"
-      last: "最後 &raquo;"
-      previous: "前"
-      next: "次"
-      truncate: "..."
     errors:
       messages:
         record_invalid: "バリデーションに失敗しました: %{errors}"
